@@ -1,6 +1,11 @@
 %% this files shows examples on how to use the different routines of this package
 
-addpath(genpath('./'));
+path2ganges = '/home/johannes/';
+
+addpath(genpath('./database/'));
+addpath(genpath('./raw_loads/'));
+addpath(genpath('./supply/'));
+addpath(genpath([path2ganges 'ganges/work/chipod_gust/software/']));
 
 
 %_____________________database selects______________________
