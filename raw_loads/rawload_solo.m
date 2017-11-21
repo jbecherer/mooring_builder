@@ -33,7 +33,15 @@ end
 db1 = sqlite(fid);
 
 % get data block
-data = fetch(db1,'select * from data');
+try 
+   data = fetch(db1,'select * from data');
+catch ME
+   close(db1);
+   T = [];
+   return;
+end
+
+
 
 % convert unix time from t logger into matlab time
 timetmp = datenum(1970,1,1,0,0,double(cell2mat(data(:,1))/1000));
@@ -48,3 +56,5 @@ inst = fetch(db1, 'SELECT serialID, model FROM instruments');
 
 T.sn = inst(1,1);
 T.model = inst(1,2);
+
+close(db1);
