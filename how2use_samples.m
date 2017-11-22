@@ -4,6 +4,7 @@ path2ganges = '/home/johannes/';
 
 addpath(genpath('./sw_tbx/'));
 addpath(genpath('./database/'));
+addpath(genpath('./processing/'));
 addpath(genpath('./mooring/'));
 addpath(genpath('./raw_loads/'));
 addpath(genpath('./supply/'));
@@ -18,9 +19,15 @@ inst_sn    = '%';
 
 
 %_____________________combine all ctd data from a mooring in a structure______________________
-moorName = 'oc25sb-t'
-[M] = make_mooring(moorName, path2ganges)
-[fig] = plot_T_chain(M); 
+%moorName = 'oc25sb-t'
+%[M] = make_mooring(moorName, path2ganges)
+%[fig] = plot_T_chain(M); 
 
 %_____________________add datapaths to database______________________
 % add_instrument_pathes2database(path2ganges, [experiment], [platform], [instType], [inst_sn])
+
+%_____________________temp.mat processing______________________
+%chipod_or_gust = 0;
+%do_redo = 0;
+%inst_sn = '1123'
+%generate_all_tempmat(path2ganges, experiment, platform, chipod_or_gust , inst_sn, do_redo)
