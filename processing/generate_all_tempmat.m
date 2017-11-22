@@ -1,5 +1,5 @@
-function [] = generate_all_tempmat(path2ganges, experiment, platform, chipod_or_gust, inst_sn, do_redo )
-%%     [] = add_instrument_pathes2database(path2ganges, [experiment], [platform], [chipod_or_gust], [inst_sn], [do_redo])
+function [] = generate_all_tempmat(path2ganges, experiment, platform, chipod_or_gust, inst_sn, do_redo, do_parallel )
+%%     [] = add_instrument_pathes2database(path2ganges, [experiment], [platform], [chipod_or_gust], [inst_sn], [do_redo], [do_parallel])
 %
 %  This functions automatically tries to find datapathes and adds them to the omg database
 %
@@ -10,6 +10,7 @@ function [] = generate_all_tempmat(path2ganges, experiment, platform, chipod_or_
 %     chipod_or_gust :  which type of instrument (1:chipod, 2:gust, 0:both (default) ) 
 %     inst_sn        :  string to identify the serial number of instrument (default '%' which means all sns) 
 %     do_redo        :  shall the processing be done although a temp.mat file exist already? (default 0 no)
+%     do_parallel    :  shall the processing be done in parallel (default 1 yes)
 %
 %
 %   created by: 
@@ -17,6 +18,10 @@ function [] = generate_all_tempmat(path2ganges, experiment, platform, chipod_or_
 %        Tue Nov 21 13:18:21 PST 2017
 
 %_____________________set default inputs______________________
+if nargin < 7
+   do_parallel = 1;
+end
+
 if nargin < 6
    do_redo = 0;
 end
@@ -97,7 +102,7 @@ for i = 1:size(data,1)
 
    if ~exist_temp | do_redo
       try
-         generate_temp( [path2ganges basedir],  1)
+         generate_temp( [path2ganges basedir],  do_parallel)
       catch ME
          warning( [ 'I could not process ' inst_name ' in ' basedir] );
       end
