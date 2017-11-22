@@ -26,6 +26,13 @@ inst_sn    = '%';
 %_____________________add datapaths to database______________________
 % add_instrument_pathes2database(path2ganges, [experiment], [platform], [instType], [inst_sn])
 
+%_____________________add _comments to instruments in database______________________
+%  inst_sn = 'G064';
+%  comment = 'test';
+%  clear_old_comment = 0;
+%  add_comment2instrument( comment , path2ganges, experiment, platform, instType, inst_sn, clear_old_comment )
+
+
 %_____________________temp.mat processing______________________
 %chipod_or_gust = 0;
 %do_redo = 0;
