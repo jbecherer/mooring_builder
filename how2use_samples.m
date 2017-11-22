@@ -20,6 +20,7 @@ inst_sn    = '%';
 %_____________________combine all ctd data from a mooring in a structure______________________
 moorName = 'oc25sb-t'
 [M] = make_mooring(moorName, path2ganges)
+[fig] = plot_T_chain(M); 
 
 %_____________________add datapaths to database______________________
 % add_instrument_pathes2database(path2ganges, [experiment], [platform], [instType], [inst_sn])
