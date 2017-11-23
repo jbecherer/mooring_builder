@@ -5,6 +5,7 @@ path2ganges = '/home/johannes/';
 addpath(genpath('./sw_tbx/'));
 addpath(genpath('./database/'));
 addpath(genpath('./processing/'));
+addpath(genpath('./plotting/'));
 addpath(genpath('./mooring/'));
 addpath(genpath('./raw_loads/'));
 addpath(genpath('./supply/'));
@@ -24,9 +25,9 @@ inst_sn    = '%';
 %[fig] = plot_T_chain(M); 
 
 %_____________________add datapaths to database______________________
-   platform = '%';
-   insttype = '%';
- add_instrument_pathes2database(path2ganges, [experiment], [platform], [instType], [inst_sn])
+%  platform = '%';
+%  insttype = '%';
+%add_instrument_pathes2database(path2ganges, [experiment], [platform], [instType], [inst_sn])
 
 %_____________________add _comments to instruments in database______________________
 %  inst_sn = 'G064';
@@ -45,3 +46,7 @@ inst_sn    = '%';
 %do_redo = 0;
 %inst_sn = '1123'
 %generate_all_tempmat(path2ganges, experiment, platform, chipod_or_gust , inst_sn, do_redo)
+
+%_____________________make bsic temp_plots______________________
+inst_sn = 'G041';
+plot_temp_for_gust_and_chipods(path2ganges, experiment, platform, instType, inst_sn )
