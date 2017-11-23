@@ -24,7 +24,9 @@ inst_sn    = '%';
 %[fig] = plot_T_chain(M); 
 
 %_____________________add datapaths to database______________________
-% add_instrument_pathes2database(path2ganges, [experiment], [platform], [instType], [inst_sn])
+   platform = '%';
+   insttype = '%';
+ add_instrument_pathes2database(path2ganges, [experiment], [platform], [instType], [inst_sn])
 
 %_____________________add _comments to instruments in database______________________
 %  inst_sn = 'G064';
@@ -32,6 +34,11 @@ inst_sn    = '%';
 %  clear_old_comment = 0;
 %  add_comment2instrument( comment , path2ganges, experiment, platform, instType, inst_sn, clear_old_comment )
 
+%_____________________add start and stop date to database to database______________________
+   %inst_sn = 'G041';
+  %platform   = '%';
+  %instType   = '%';
+  %add_auto_startstop2instruments(path2ganges, [experiment], [platform], [instType], [inst_sn])
 
 %_____________________temp.mat processing______________________
 %chipod_or_gust = 0;
