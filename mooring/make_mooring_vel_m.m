@@ -33,7 +33,6 @@ close(omg_db);
 
   % which instruments to process
    if isempty(data)
-      M= [] ;
       warning('!!! No matching instruments where found in the data base');
       return;
    end
