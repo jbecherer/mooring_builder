@@ -48,5 +48,11 @@ inst_sn    = '%';
 %generate_all_tempmat(path2ganges, experiment, platform, chipod_or_gust , inst_sn, do_redo)
 
 %_____________________make bsic temp_plots______________________
-inst_sn = 'G041';
-plot_temp_for_gust_and_chipods(path2ganges, experiment, platform, instType, inst_sn )
+%inst_sn = 'G041';
+%plot_temp_for_gust_and_chipods(path2ganges, experiment, platform, instType, inst_sn )
+
+%_____________________calibrate all pitot tubes______________________
+chipod_or_gust = 0;
+do_redo        = 0;
+do_parallel    = 1;
+calibrate_all_pitots(path2ganges, experiment, platform, chipod_or_gust, inst_sn, do_redo )
