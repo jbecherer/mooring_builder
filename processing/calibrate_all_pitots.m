@@ -118,6 +118,9 @@ for i = 1:size(data,1)
          do_vel_p   = 1;
 
          determine_v0( [path2ganges basedir], do_v0_self, do_v0_adcp, do_plot, do_vel_p, timelims)
+        % db comment 
+         database_comment = [datestr(now, 'yyyy-mm-dd HH:MM') ' :  pitot calibrated (V0)'];
+         add_comment2instrument( database_comment , path2ganges, experiment, platform, inst_type, inst_name, 0 );
       catch ME
          disp(ME)
          warning( [ 'I could not calibrate ' inst_name ' in ' basedir] );

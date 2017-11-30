@@ -118,6 +118,9 @@ for i = 1:size(data,1)
    if ~exist_praw | do_redo
       try
          generate_praw( [path2ganges basedir], do_parallel,  timelims) 
+        % db comment 
+         database_comment = [datestr(now, 'yyyy-mm-dd HH:MM') ' :  Praw.mat processed'];
+         add_comment2instrument( database_comment , path2ganges, experiment, platform, inst_type, inst_name, 0 );
       catch ME
          disp(ME)
          warning( [ 'I could not process ' inst_name ' in ' basedir] );

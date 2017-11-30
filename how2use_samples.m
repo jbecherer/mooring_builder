@@ -64,4 +64,5 @@ inst_sn    = '%';
 %  chipod_or_gust = 0;
 %  do_redo        = 0;
 %  do_parallel    = 1;
+%  inst_sn        = 'G044'
 %  calibrate_all_pitots(path2ganges, experiment, platform, chipod_or_gust, inst_sn, do_redo )

@@ -103,6 +103,9 @@ for i = 1:size(data,1)
    if ~exist_temp | do_redo
       try
          generate_temp( [path2ganges basedir],  do_parallel)
+        % db comment 
+         database_comment = [datestr(now, 'yyyy-mm-dd HH:MM') ' :  temp.mat processed'];
+         add_comment2instrument( database_comment , path2ganges, experiment, platform, inst_type, inst_name, 0 );
       catch ME
          warning( [ 'I could not process ' inst_name ' in ' basedir] );
       end
