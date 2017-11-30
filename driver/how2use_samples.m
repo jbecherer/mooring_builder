@@ -3,13 +3,7 @@
 %path2ganges = '/home/johannes/';
 path2ganges = '/Users/mixing/';
 
-addpath(genpath('./sw_tbx/'));
-addpath(genpath('./database/'));
-addpath(genpath('./processing/'));
-addpath(genpath('./plotting/'));
-addpath(genpath('./mooring/'));
-addpath(genpath('./raw_loads/'));
-addpath(genpath('./supply/'));
+addpath(genpath('../software/'));
 addpath(genpath([path2ganges 'ganges/work/chipod_gust/software/']));
 
 
