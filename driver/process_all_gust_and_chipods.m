@@ -10,6 +10,7 @@ do_parallel  = 1;
 do_temp      = 0;
 do_temp_plot = 0;
 do_praw      = 0;
+do_cal_pitot = 0;
 do_peps      = 0;
 
 
@@ -41,6 +42,11 @@ end
 %_____________________Praw ______________________
 if do_praw
    generate_all_praw(path2ganges, experiment, platform, chipod_or_gust , inst_sn, do_redo, do_parallel);
+end
+
+%_____________________calibrate Pitot______________________
+if do_cal_pitot
+  calibrate_all_pitots(path2ganges, experiment, platform, chipod_or_gust, inst_sn, do_redo )
 end
 
 %_____________________pitot epsilon ______________________
