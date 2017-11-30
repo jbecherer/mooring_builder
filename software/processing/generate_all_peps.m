@@ -73,8 +73,8 @@ sql_string = ['SELECT inst_name, inst_id,  datapath, inst_type , start, stop ' .
                      'FROM instOnPlat where experiment like "' experiment '" and ' ...
                      'platform_name like "' platform  '" and (inst_type like "' instType '") and '...
                      'inst_name like "' inst_sn '"'];
-   disp('The following SQL statement is applied to the omg_database:');
-   disp(['  ' sql_string]);
+%  disp('The following SQL statement is applied to the omg_database:');
+%  disp(['  ' sql_string]);
 data = fetch(omg_db, sql_string );
 
 %_____________________show all instruments that are going to be ______________________
@@ -123,6 +123,8 @@ for i = 1:size(data,1)
         % db comment 
          database_comment = [datestr(now, 'yyyy-mm-dd HH:MM') ' :  pitot_eps300sec.mat processed'];
          add_comment2instrument( database_comment , path2ganges, experiment, platform, inst_type, inst_name, 0 );
+         % make basic diagnostic plot
+         plot_pitot_eps([path2ganges basedir]);
       catch ME
          disp(ME)
          warning( [ 'I could not process ' inst_name ' in ' basedir] );
