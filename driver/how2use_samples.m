@@ -60,3 +60,11 @@ inst_sn    = '%';
 %  do_parallel    = 1;
 %  inst_sn        = 'G044'
 %  calibrate_all_pitots(path2ganges, experiment, platform, chipod_or_gust, inst_sn, do_redo )
+
+
+%_____________________pitot epsilon ______________________
+   chipod_or_gust = 0;
+   do_redo        = 1;
+   do_parallel    = 1;
+   inst_sn        = 'G044'
+   generate_all_peps(path2ganges, experiment, platform, chipod_or_gust , inst_sn, do_redo, do_parallel);
