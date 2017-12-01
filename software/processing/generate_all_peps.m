@@ -124,7 +124,8 @@ for i = 1:size(data,1)
          database_comment = [datestr(now, 'yyyy-mm-dd HH:MM') ' :  pitot_eps300sec.mat processed'];
          add_comment2instrument( database_comment , path2ganges, experiment, platform, inst_type, inst_name, 0 );
          % make basic diagnostic plot
-         plot_pitot_eps([path2ganges basedir]);
+         fig = plot_pitot_eps([path2ganges basedir]);
+         print(fig,[path2ganges basedir '/pics/Peps.png'],'-dpng')
       catch ME
          disp(ME)
          warning( [ 'I could not process ' inst_name ' in ' basedir] );
