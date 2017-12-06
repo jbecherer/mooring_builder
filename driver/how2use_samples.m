@@ -1,7 +1,7 @@
 %% this files shows examples on how to use the different routines of this package
 
-%path2ganges = '/home/johannes/';
-path2ganges = '/Users/mixing/';
+path2ganges = '/home/johannes/';
+%path2ganges = '/Users/mixing/';
 
 addpath(genpath('../software/'));
 addpath(genpath([path2ganges 'ganges/work/chipod_gust/software/']));
@@ -21,8 +21,8 @@ inst_sn    = '%';
 
 %_____________________add datapaths to database______________________
 %  platform = '%';
-%  insttype = '%';
-%  add_instrument_pathes2database(path2ganges, [experiment], [platform], [instType], [inst_sn])
+  instType = '%';
+  add_instrument_pathes2database(path2ganges, [experiment], [platform], [instType], [inst_sn])
 
 %_____________________add _comments to instruments in database______________________
 %  inst_sn = 'G064';
@@ -63,8 +63,8 @@ inst_sn    = '%';
 
 
 %_____________________pitot epsilon ______________________
-   chipod_or_gust = 0;
-   do_redo        = 1;
-   do_parallel    = 1;
-   inst_sn        = 'G044'
-   generate_all_peps(path2ganges, experiment, platform, chipod_or_gust , inst_sn, do_redo, do_parallel);
+%  chipod_or_gust = 0;
+%  do_redo        = 1;
+%  do_parallel    = 1;
+%  inst_sn        = 'G044'
+%  generate_all_peps(path2ganges, experiment, platform, chipod_or_gust , inst_sn, do_redo, do_parallel);

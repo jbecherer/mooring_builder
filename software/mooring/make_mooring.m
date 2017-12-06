@@ -16,15 +16,17 @@ function [M] = make_mooring(moorName, path2Ganges)
 % on
 % Fri Jul  7 21:38:13 PDT 2017
 
-addpath('../raw_laods/')
-addpath('../sw_tbx/')
+%%addpath('../raw_laods/')
+%addpath('../raw_laods/')
+addpath(genpath('../'))
+
 
 % open omg database
 omg_db = sqlite([path2Ganges 'ganges/work/database/omg.sqlite'], 'readonly');
 
 % find all instruments in database that belong to mooring
-sql_string = ['SELECT inst_name, inst_type, mab, depth, lat, lon, deploy, recover, datapath, waterdepth ' ...
-                     'FROM instOnPlat WHERE platform_name like "' moorName '"']
+sql_string = ['SELECT inst_name, inst_type, mab, depth, lat, lon, deploy, recover, datapath, waterdepth, ' ...
+                     ' start, stop FROM instOnPlat WHERE platform_name like "' moorName '"']
 data = fetch(omg_db, sql_string);
 disp(['The following statement is applied to the data base']);
 disp(sql_string);

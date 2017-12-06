@@ -65,6 +65,8 @@ for i = 1:size(data,1)
       if exist(sdir)
          disp(['  generating vel_m for ' i_sn] );
          generate_vel_m( time_A, z_A, real(U_A), imag(U_A), z, sdir);
+         database_comment = [datestr(now, 'yyyy-mm-dd HH:MM') ' :  vel_m.mat generated'];
+         add_comment2instrument( database_comment , path2ganges, '%', moorname, i_type, i_sn, 0 );
       else
          disp([ sdir 'does not  exist']);
          disp(['the processing will be skiped for this instrument']);

@@ -19,34 +19,44 @@ else
    outdir=$2
 fi
 
-# pitot-loop
-ff=$(find $indir -name V0_fit*.png)
+# Peps-loop
+ff=$(find $indir -name Peps.png)
 for f in $ff 
 do
    echo $f
-   unit=${f:(-28):4}
-   dest=$(echo $outdir/pitot/${unit}_pitot_self.png)
+   unit=${f:(-18):4}
+   dest=$(echo $outdir/pitot/${unit}_peps.png)
    echo $dest
    cp -v $f $dest;
 done
-# pitot-loop
-ff=$(find $indir -name Pitot_vs*.png)
-for f in $ff 
-do
-   echo $f
-   unit=${f:(-34):4}
-   dest=$(echo $outdir/pitot/${unit}_pitot_adcp.png)
-   echo $dest
-   cp -v $f $dest;
-done
+   # pitot-loop
+   ff=$(find $indir -name V0_fit*.png)
+   for f in $ff 
+   do
+      echo $f
+      unit=${f:(-28):4}
+      dest=$(echo $outdir/pitot/${unit}_pitot_self.png)
+      echo $dest
+      cp -v $f $dest;
+   done
+   # pitot-loop
+   ff=$(find $indir -name Pitot_vs*.png)
+   for f in $ff 
+   do
+      echo $f
+      unit=${f:(-34):4}
+      dest=$(echo $outdir/pitot/${unit}_pitot_adcp.png)
+      echo $dest
+      cp -v $f $dest;
+   done
 
-# temp-loop
-fftemp=$(find $indir -name temp_wh*.png)
-for f in $fftemp 
-do
-   echo $f
-   dest_temp=$(echo $outdir/temp_pics/${f:(-24):4}_temp.png)
-   echo $dest_temp
-   cp -v $f $dest_temp;
-done
+   # temp-loop
+   fftemp=$(find $indir -name temp_wh*.png)
+   for f in $fftemp 
+   do
+      echo $f
+      dest_temp=$(echo $outdir/temp_pics/${f:(-24):4}_temp.png)
+      echo $dest_temp
+      cp -v $f $dest_temp;
+   done
 

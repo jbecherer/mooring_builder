@@ -17,6 +17,10 @@ omg_db = sqlite([path2ganges 'ganges/work/database/omg.sqlite'], 'readonly');
    % all instruments on ms100_t get the correponding vel_m
    lander   =  'ms100_a';
    string   =  'ms100_t';
+  %lander   =  'oc40n_a';
+  %string   =  'oc40n_t';
+  %lander   =  'oc40s_a';
+  %string   =  'oc40s_t';
 
 
     %---------------------find ADCP data----------------------

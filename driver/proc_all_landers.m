@@ -1,23 +1,23 @@
 %% process all things on all instruments 
 
-path2ganges = '/home/johannes/';
-%path2ganges = '/Users/mixing/';
+%path2ganges = '/home/johannes/';
+path2ganges = '/Users/mixing/';
 
 
 %_____________________what should be done?______________________
-do_redo      = 1;
+do_redo      = 0;
 do_parallel  = 1;
-do_temp      = 0;
-do_temp_plot = 0;
-do_praw      = 0;
+do_temp      = 1;
+do_temp_plot = 1;
+do_praw      = 1;
 do_cal_pitot = 1;
-do_peps      = 0;
+do_peps      = 1;
 
 
 %____________________which instruments?______________________
 chipod_or_gust   = 0;         %  0 both
 experiment       = 'is17';
-platform         = 'oc40s%';
+platform         = '%_a%';
 instType         = '%';
 inst_sn          = '%';
 

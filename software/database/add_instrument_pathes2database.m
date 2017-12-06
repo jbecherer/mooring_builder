@@ -78,7 +78,7 @@ for i = 1:size(data,1)
    % if gust of chipod
       command = [' find ' path2ganges inpath '  -type d -name ' inst_name];
   else 
-      command = [' find ' path2ganges inpath '  -type f -name "*' inst_name '*.[c,a,r][s,a,n][v,t,k]"'];
+      command = [' find ' path2ganges inpath '  -type f -name "*' inst_name '*.[d, c,a,r][s,a,n][v,t,k]"'];
   end
   [~, output] = system(command);
 
